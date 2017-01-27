@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WSSample</string>
+    <string name="send_message">SEND MESSAGE</string>
+    <string name="waitingMessage">Waiting message&#8230;</string>
+</resources>
