@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity implements WSHandler {
 
     @BindView(R.id.messageTV)
     TextView messageTV;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     private WSReceiver wsReceiver;
 
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements WSHandler {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
 
         WSService.startWS(this, wsConnection);
         wsReceiver = new WSReceiver(this);
